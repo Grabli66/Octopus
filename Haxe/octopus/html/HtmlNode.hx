@@ -1,7 +1,7 @@
-package core.html;
+package octopus.html;
 
-import core.html.NativeHtml.NativeHtmlApi;
-import core.html.NativeHtml.NativeHtmlTreeNode;
+import octopus.html.NativeHtml.NativeHtmlApi;
+import octopus.html.NativeHtml.NativeHtmlTreeNode;
 
 using Lambda;
 
@@ -41,17 +41,6 @@ class ChildNodeIterator {
 		return nextNode;
 	}
 }
-
-// A -
-//     B1 -
-//          E1
-//          E2 -
-//              F1
-//              F2
-//     B2
-//     B3 -
-//          C1
-//          C2
 
 /**
  * Iterator over nodes
@@ -129,8 +118,8 @@ class HtmlNode {
 	 * Create from native node
 	 * @param native
 	 */
-	@:allow(core.html.HtmlTree)
-	@:allow(core.html.NodeCollection)
+	@:allow(octopus.html.HtmlTree)
+	@:allow(octopus.html.NodeCollection)
 	static function fromNative(native:NativeHtmlTreeNode, tree:HtmlTree) {
 		var res = new HtmlNode(tree);
 		res.nativeNode = native;

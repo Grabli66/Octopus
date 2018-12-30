@@ -1,6 +1,6 @@
-package core.html;
+package octopus.html;
 
-import core.html.NativeHtml.NativeHtmlApi;
+import octopus.html.NativeHtml.NativeHtmlApi;
 
 /**
  * Html parser

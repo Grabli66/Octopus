@@ -1,8 +1,7 @@
-package core.html;
+package octopus.html;
 
-import core.html.HtmlNode.NodeIterator;
-import core.html.NativeHtml.NativeHtmlApi;
-import core.html.NativeHtml.NativeHtmlTree;
+import octopus.html.NativeHtml.NativeHtmlApi;
+import octopus.html.NativeHtml.NativeHtmlTree;
 
 /**
  * Html tree with nodes
@@ -17,7 +16,7 @@ class HtmlTree {
 	 * Create tree from native
 	 * @param native
 	 */
-	@:allow(core.html.HtmlParser)
+	@:allow(octopus.html.HtmlParser)
 	static function fromNative(native:NativeHtmlTree):HtmlTree {
 		var res = new HtmlTree();
 		res.nativeTree = native;

@@ -1,4 +1,4 @@
-package core.html;
+package octopus.html;
 
 /**
  * Html tag id

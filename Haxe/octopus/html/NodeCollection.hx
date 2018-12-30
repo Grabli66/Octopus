@@ -1,7 +1,7 @@
-package core.html;
+package octopus.html;
 
-import core.html.NativeHtml.NativeHtmlApi;
-import core.html.NativeHtml.NativeCollection;
+import octopus.html.NativeHtml.NativeHtmlApi;
+import octopus.html.NativeHtml.NativeCollection;
 
 /**
  * Node collection iterator
@@ -67,7 +67,7 @@ class NodeCollection {
 	 * Create from native collection
 	 * @param native
 	 */
-    @:allow(core.html.HtmlNode)
+    @:allow(octopus.html.HtmlNode)
 	static function fromNative(native:NativeCollection, tree:HtmlTree) {
 		var res = new NodeCollection(tree);
 		res.nativeCollection = native;

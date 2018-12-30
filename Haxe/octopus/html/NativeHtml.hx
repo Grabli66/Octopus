@@ -1,4 +1,4 @@
-package core.html;
+package octopus.html;
 
 /**
  * Native html ctx
@@ -23,7 +23,7 @@ typedef NativeCollection = hl.Abstract<"NodeCollection">;
 /**
  * Native html api
  */
-@:hlNative("core")
+@:hlNative("octopus")
 class NativeHtmlApi {
     /**
      * Create html ctx
