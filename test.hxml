@@ -1,0 +1,4 @@
+-cp Haxe
+-cp Test
+-hl test
+-main Test

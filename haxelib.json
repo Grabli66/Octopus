@@ -1,0 +1,14 @@
+{
+	"name": "octopus",
+	"license": "MIT",
+	"tags": [
+		"scrape", "web", "html", "css", "parser", "hashlink"
+	],
+	"classPath": "Haxe",
+	"description": "Html parser with CSS selectors",
+	"contributors": [
+		"grabli66"
+	],	
+	"version": "0.1.0",
+	"url": "https://github.com/Grabli66/Octopus"
+}
