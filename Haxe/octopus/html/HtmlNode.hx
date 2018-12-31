@@ -245,6 +245,20 @@ class HtmlNode {
     }
 
 	/**
+	 * Get attribute value by key
+	 * @param key 
+	 */
+	public function getAttributeValue(key:String):String {
+		var len = 0;
+		var bytes = @:privateAccess key.bytes.utf16ToUtf8(0, len);
+		var nativeAttr = NativeHtmlApi.html_get_attribute_by_key(nativeNode, bytes, len);
+		if (nativeAttr == null)
+			return null;
+		var res = NodeAttribute.fromNative(nativeAttr);
+		return res.value;
+	}
+
+	/**
 	 * Find nodes by css selectors
 	 * @param data
 	 * @return Array<HtmlNode>

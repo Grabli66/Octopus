@@ -21,9 +21,9 @@ mycss_selectors_list_t* prepare_selector(mycss_entry_t* css_entry, const char* s
 
 #define _HTML_CTX_GC _ABSTRACT(HtmlCtx)
 #define _HTML_TREE_GC _ABSTRACT(HtmlTree)
-#define _HTML_TREE_NODE _ABSTRACT(html_tree_node)
-#define _HTML_FINDER _ABSTRACT(html_finder)
-#define _HTML_COLLECTION _ABSTRACT(NodeCollection)
+#define _HTML_TREE_NODE _ABSTRACT(myhtml_tree_node_t)
+#define _HTML_COLLECTION_GC _ABSTRACT(NodeCollection)
+#define _HTML_NODE_ATTR _ABSTRACT(myhtml_tree_attr_t)
 
 typedef struct {
     void *free;
@@ -167,6 +167,17 @@ HL_PRIM int HL_NAME(hl_html_get_node_tag)(myhtml_tree_node_t* node) {
     return node->tag_id;
 }
 
+// Get attribute by key
+HL_PRIM myhtml_tree_attr_t* HL_NAME(hl_html_get_attribute_by_key)(myhtml_tree_node_t* node, const char* key, int len) {
+    return myhtml_attribute_by_key(node, key, len);
+}
+
+// Get attribute value
+HL_PRIM const char* HL_NAME(hl_html_get_attribute_value)(myhtml_tree_attr_t* attr) {
+    size_t* len = 0;
+    return myhtml_attribute_value(attr, len);
+}
+
 // Return collection length
 HL_PRIM int HL_NAME(hl_html_get_collection_length)(NodeCollection* collection) {
     return collection->collection->length;
@@ -190,14 +201,18 @@ DEFINE_PRIM(_BYTES, html_get_tagname_by_tagid, _HTML_TREE_GC _I32);
 DEFINE_PRIM(_I32, html_get_tagid_by_tagname, _HTML_TREE_GC _BYTES _I32);
 
 // NODE
-DEFINE_PRIM(_HTML_COLLECTION, html_find_by_css, _HTML_TREE_NODE _BYTES _I32);
-DEFINE_PRIM(_HTML_COLLECTION, html_get_nodes_by_tagid, _HTML_TREE_NODE _I32);
+DEFINE_PRIM(_HTML_COLLECTION_GC, html_find_by_css, _HTML_TREE_NODE _BYTES _I32);
+DEFINE_PRIM(_HTML_COLLECTION_GC, html_get_nodes_by_tagid, _HTML_TREE_NODE _I32);
 DEFINE_PRIM(_HTML_TREE_NODE, html_node_child, _HTML_TREE_NODE);
 DEFINE_PRIM(_HTML_TREE_NODE, html_node_last_child, _HTML_TREE_NODE);
 DEFINE_PRIM(_HTML_TREE_NODE, html_node_next, _HTML_TREE_NODE);
 DEFINE_PRIM(_HTML_TREE_NODE, html_node_prev, _HTML_TREE_NODE);
 DEFINE_PRIM(_I32, html_get_node_tag, _HTML_TREE_NODE);
+DEFINE_PRIM(_HTML_NODE_ATTR, html_get_attribute_by_key, _HTML_TREE_NODE _BYTES _I32);
 
-DEFINE_PRIM(_I32, html_get_collection_length, _HTML_COLLECTION);
-DEFINE_PRIM(_HTML_TREE_NODE, html_get_node_from_collection, _HTML_COLLECTION _I32);
+// ATTRIBUTE
+DEFINE_PRIM(_BYTES, html_get_attribute_value, _HTML_NODE_ATTR);
+
+DEFINE_PRIM(_I32, html_get_collection_length, _HTML_COLLECTION_GC);
+DEFINE_PRIM(_HTML_TREE_NODE, html_get_node_from_collection, _HTML_COLLECTION_GC _I32);
 DEFINE_PRIM(_BYTES, html_get_node_text, _HTML_TREE_NODE);

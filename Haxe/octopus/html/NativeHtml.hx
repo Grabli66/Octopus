@@ -13,12 +13,17 @@ typedef NativeHtmlTree = hl.Abstract<"HtmlTree">;
 /**
  * Native html tree node
  */
-typedef NativeHtmlTreeNode = hl.Abstract<"html_tree_node">;
+typedef NativeHtmlTreeNode = hl.Abstract<"myhtml_tree_node_t">;
 
 /**
  * Native html tree
  */
 typedef NativeCollection = hl.Abstract<"NodeCollection">;
+
+/**
+ * Native node attribute
+ */
+typedef NativeAttribute = hl.Abstract<"myhtml_tree_attr_t">;
 
 /**
  * Native html api
@@ -111,6 +116,20 @@ class NativeHtmlApi {
      */
     public static function html_get_node_tag(node:NativeHtmlTreeNode):Int {
         return 0;
+    }
+
+    /**
+     * Return node attribute by key
+     */
+    public static function html_get_attribute_by_key(node:NativeHtmlTreeNode, key:hl.Bytes, len:Int):NativeAttribute {
+        return null;
+    }
+
+    /**
+     * Return attribute value
+     */
+    public static function html_get_attribute_value(attr:NativeAttribute):hl.Bytes {
+        return null;
     }
 
     /**

@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=grabli66
-Date                   :=12/30/18
+Date                   :=12/31/18
 CodeLitePath           :=/home/grabli66/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -36,12 +36,12 @@ ObjectsFileList        :="Octopus.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  -s
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)/home/grabli66/WorkspaceTest/hashlink/src/ $(IncludeSwitch)/home/grabli66/Workspace/Cpp/Octopus/Libs/Modest/include/
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)/home/grabli66/WorkspaceTest/hashlink/src/ $(IncludeSwitch)/home/grabli66/Workspace/Cpp/Octopus/Libs/Modest/include/ 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := $(LibrarySwitch)modest_static 
 ArLibs                 :=  "modest_static" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/home/grabli66/Workspace/Cpp/Octopus/Libs/Modest/lib/
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/home/grabli66/Workspace/Cpp/Octopus/Libs/Modest/lib/ 
 
 ##
 ## Common variables
