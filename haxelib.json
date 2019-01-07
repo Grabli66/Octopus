@@ -4,7 +4,7 @@
 	"tags": [
 		"scrape", "web", "html", "css", "parser", "hashlink"
 	],
-	"classPath": "Haxe",
+	"classPath": "src",
 	"description": "Html parser with CSS selectors",
 	"contributors": [
 		"grabli66"

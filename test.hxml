@@ -1,4 +1,4 @@
--cp Haxe
--cp Test
--hl test
+-cp test
+-cp src
 -main Test
+-cpp out
